@@ -1,0 +1,28 @@
+﻿<Window x:Class="Timer.Views.CounterSet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Timer.Views"
+        mc:Ignorable="d"
+        Title="CounterSet" Height="200" Width="200">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" HorizontalAlignment="Center">Vyber cas odpoctu:</Label>
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">            
+            <RadioButton Name="btn5min" Command="{Binding SetTime}" CommandParameter="btn5min" IsChecked="True">5 Minut</RadioButton>
+            <RadioButton Name="btn3min" Command="{Binding SetTime}" CommandParameter="btn3min">3 Minuty</RadioButton>
+            <RadioButton Name="btn1min" Command="{Binding SetTime}" CommandParameter="btn1min">1 Minuta</RadioButton>        
+        </StackPanel> 
+
+        <Button Name="StartCounter" Grid.Row="2" Grid.Column="0" Command="{Binding SetTimer}" CommandParameter="temp">Zahájit odpočet</Button>
+    </Grid>
+</Window>
